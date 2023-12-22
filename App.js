@@ -1,6 +1,5 @@
-import { View, StatusBar, Button } from "react-native";
+import { ActivityIndicator, Alert, Button, View } from "react-native";
 import { useState } from "react";
-const logoImg = require("./assets/adaptive-icon.png");
 
 export default function App() {
   const [isStatusBarVisible, setIsStatusBarVisible] = useState(true);
@@ -18,14 +17,20 @@ export default function App() {
         padding: 60,
       }}
     >
-      <StatusBar
-        backgroundColor="gold"
-        barStyle="dark-content"
-        hidden={!isStatusBarVisible}
-      />
       <Button
-        title={isStatusBarVisible ? "Press Me" : "UnPress Me"}
-        onPress={toggleStatusBar}
+        title="Alert"
+        onPress={() =>
+          Alert.alert("Invalid Data", "DOB incorrect", [
+            {
+              text: "Cancel",
+              onPress: () => console.log("Cancel Pressed"),
+            },
+            {
+              text: "Ok",
+              onPress: () => console.log("Ok Pressed"),
+            },
+          ])
+        }
       />
     </View>
   );
