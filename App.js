@@ -1,19 +1,20 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import Box from "./components/Box";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.darkMode}>
-        <Text style={styles.darkModeText}>
-          Style Inheritance <Text style={styles.boldText}>in bold</Text>{" "}
-        </Text>
-      </View>
-      <View style={[styles.box, styles.lightBlue, styles.box]}>
-        <Text>LightBlue Box</Text>
-      </View>
-      <View style={[styles.box, styles.lightGreen, styles.androidShadow]}>
-        <Text>LightGreen Box</Text>
-      </View>
+      <Box style={{ backgroundColor: "#8e9b00", flexShrink: 1 }}>
+        Box 1 Shrink
+      </Box>
+      <Box style={{ backgroundColor: "#b65d1f", flexShrink: 1 }}>
+        Box 2 Shrink
+      </Box>
+      {/* <Box style={{ backgroundColor: "#1c4c56" }}>Box 3</Box>
+      <Box style={{ backgroundColor: "#ab9156" }}>Box 4</Box>
+      <Box style={{ backgroundColor: "#6b0803" }}>Box 5</Box>
+      <Box style={{ backgroundColor: "#1c4c56" }}>Box 6</Box>
+      <Box style={{ backgroundColor: "#b95f21" }}>Box 7</Box> */}
     </View>
   );
 }
@@ -21,50 +22,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "plum",
-    padding: 10,
-  },
-  darkMode: {
-    backgroundColor: "black",
-  },
-  darkModeText: {
-    color: "white",
-  },
-  boldText: {
-    fontWeight: "bold",
-  },
-  box: {
-    width: 250,
-    height: 250,
-    paddingHorizontal: 10,
-    paddingVertical: 20,
-    marginVertical: 10,
-    borderWidth: 2,
-    borderColor: "purple",
-    // * It's set to solid by default
-    borderStyle: "solid",
-    borderRadius: 5,
-  },
-  lightBlue: {
-    backgroundColor: "lightblue",
-  },
-  lightGreen: {
-    backgroundColor: "lightgreen",
-  },
-  // * works for iOS only
-  boxShadow: {
-    shadowColor: "333333",
-    shadowOffset: {
-      width: 6,
-      height: 6,
-    },
-    shadowOpacity: 0.6,
-    shadowRadius: 4,
-  },
-  // * works for Android only
-  androidShadow: {
-    elevation: 10,
+    width: 300,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    marginTop: 64,
+    borderWidth: 6,
+    borderColor: "red",
   },
 });
