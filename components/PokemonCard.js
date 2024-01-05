@@ -21,7 +21,7 @@ export default function PokemonCard({
   type,
   hp,
   moves,
-  weakness,
+  weaknesses,
 }) {
   const { borderColor, emoji } = getTypeDetails(type);
   return (
@@ -47,7 +47,7 @@ export default function PokemonCard({
       </View>
       <View style={styles.weaknessesContainer}>
         <Text style={styles.weaknessesText}>
-          Weakness: {weakness.join(", ")}
+          Weakness: {weaknesses.join(", ")}
         </Text>
       </View>
     </View>
